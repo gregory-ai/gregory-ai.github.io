@@ -1,0 +1,219 @@
+
+.contact-section {
+  position: relative;
+  width: 100%;
+  height: 200px; 
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;     /* Center vertically */
+  background-color: #0e1a24;
+  overflow: hidden;
+}
+
+/* Footer background image */
+.footer-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Contact info container (right column) */
+.contacts-grid {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  height: 150px;
+  z-index: 1;
+  flex-direction: row;
+  gap: 40px;
+  background-color: rgb(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 30px;
+  width: 85%;
+}
+
+.footer-logo {
+  width: 20%;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+}
+.connect-row{
+  display: flex;
+  flex-direction: row;
+  transform: translateX(-18px);
+}
+
+.contact-linkedin{
+  all: unset;
+  cursor: pointer;
+}
+
+/* Title area (left column) */
+.connect-title {
+  font-size: 28px;
+  color: #cecece;
+  font-family: 'Poppins', sans-serif;
+  z-index: 1;
+  max-width: 300px;
+  white-space: nowrap;     /* keep phone number on one line */
+  min-width: 150px;        /* prevent it from shrinking too much */
+  flex-shrink: 0;   
+}
+
+/* Shared style for each contact row */
+.contact-title, 
+.contact-phone,
+.contact-mail,
+.contact-linkedin {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding: 6px 18px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.contact-phone,
+.contact-mail,
+.contact-linkedin {
+  color: #cacaca;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.contact-phone {
+  white-space: nowrap;     /* keep phone number on one line */
+  min-width: 150px;        /* prevent it from shrinking too much */
+  flex-shrink: 0;          /* don't allow it to be squished */
+}
+
+/* Icon image */
+.icon {
+  width: 30px;
+  height: 24px;
+  margin-right: 15px;
+  opacity: 0.9;
+  filter: brightness(0) invert(1);
+}
+
+/* Text next to icon */
+.contact-text {
+  flex: 1;
+}
+
+@media (max-width: 1200px) {
+  
+  .contacts-grid{
+    width: 90%;
+  }
+
+  .contact-details{
+    width: 70%;
+  }
+
+  .connect-title {
+    font-size: 26px;
+  }
+  
+}
+
+@media (max-width: 920px) {
+  .connect-title {
+    font-size: 22px;
+  }
+
+  .contact-phone,
+  .contact-mail,
+  .contact-linkedin {
+    font-size: 13px;
+  }
+
+  .footer-logo{
+    transform: translateX(-50px);
+  }
+
+  .contact-details{
+    transform: translateX(-75px);
+  }
+}
+
+@media (max-width: 750px) {
+
+  .contact-section{
+    height: 180px;
+  }
+  .contacts-grid {
+    width: 100%;
+    height: 140px; 
+    display: flex;
+    align-items: center; /* vertical centering */
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: row; /* keep title and details side-by-side */
+  }
+
+  .footer-logo {
+    margin-left: 10%;
+    margin-right: 50px;
+    width: 25%;
+  }
+
+  .connect-title {
+    font-size: 24px;
+    margin-right: 50px;
+  }
+
+  .contact-details {
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(none);
+  }
+
+  .connect-row{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .icon {
+  width: 27px;
+  height: 22px;
+  margin-right: 10px;
+}
+}
+
+@media (max-width: 600px) {
+  .footer-logo {
+    margin-left: 10%;
+    margin-right: 20px;
+    width: 20%;
+  }
+  
+  .connect-title {
+    font-size: 18px;
+  }
+
+  .contact-phone,
+  .contact-mail,
+  .contact-linkedin {
+    font-size: 11px;
+  }
+
+  .icon {
+  width: 22px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+}

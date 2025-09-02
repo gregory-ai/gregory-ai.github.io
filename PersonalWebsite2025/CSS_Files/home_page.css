@@ -1,0 +1,494 @@
+.home-page {
+    position: relative; /* Allows positioned child elements to position themselves relative to this element*/
+    width: 100%;
+    height: 1700px;
+    overflow: hidden;
+}
+
+.background1-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
+    object-fit: cover; /* Makes sure image fills the container */
+    z-index: 0;
+
+    /* Fade out the bottom using a transparent gradient */
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.background1-image-box {
+    position: relative;
+    padding-left: 10%;
+    z-index: 1;
+    width: 100%;
+    height: 500px;
+    display: flex; /* Center content */
+    align-items: center;
+    color: rgb(190, 191, 191, 1);
+    font-family: 'Puritan', sans-serif;
+}
+
+.text-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* aligns welcome-coded-text and hello-message */
+  gap: 10px; /* space between welcome and hello */
+}
+
+.welcome-coded-text {
+    font-size: 32px;
+    letter-spacing: 5px;
+    font-family: 'Puritan', sans-serif;
+    min-height: 40px; /* Avoid layout shift during typing */
+    width: 600px; /* Adjust as needed for longest line */
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hello-message {
+    font-family: "Braah One", sans-serif;
+    font-size: 52px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.job-details-container {
+    background: linear-gradient(165deg, #011C32 24%, #0F3037 90%);
+    opacity: 70%;
+    border: 3px solid #1B1F2B;
+    height: 500px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 100px auto 0 auto;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.job-entries {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.job-details {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* stack top-down */
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.job-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  opacity: 0.9;
+  object-fit: contain;
+}
+
+.job {
+  font-size: 28px;
+  height: 65px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(233, 233, 233);
+}
+
+.job-description {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.4;
+}
+
+.job-button {
+    margin-top: 10px;
+    padding: 16px 22px;
+    background-color: #020519;
+    color: rgb(205, 203, 203);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.job-button:hover {
+    background-color: rgb(213, 213, 213);
+    color: rgb(18, 18, 18);
+}
+
+.projects {
+    height: 600px;
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px auto 0 auto;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    padding-bottom: 70px;
+}
+
+.project-text{
+    font-size: 34px;
+    font-family: sans-serif;
+    letter-spacing: 9px;
+    color: rgb(215, 215, 215);
+    font-weight: 100;
+    padding-top: 20px;
+}
+
+.projects-grid{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.project{
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* stack top-down */
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.project-image {
+    opacity: 65%;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%; /* Better for perfect circles */
+    border: 2px solid #11324d; /* Combines width, style, and color */
+}
+
+.project-name{
+    color: rgb(224, 224, 224);
+    margin-top: 40px;
+    font-size: 20px;
+    font-family: "Braah One", sans-serif;
+}
+
+.project-info{
+    width: 92%;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    height: 100px;
+    font-size: 13px;
+    font-weight: 100;
+    color: #b7b7b7;
+    font-family: 'Poppins', sans-serif;
+}
+
+.link-to-project {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* spacing between triangle and text */
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #ececec; /* adjust as needed */
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid rgb(16, 87, 120); /* triangle color */
+}
+
+.link {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: rgb(16, 87, 120); /* optional hover color */
+}
+
+@media(max-width:1010px){
+
+  .project-name{
+    font-size: 18px;
+  }
+
+  .project-info{
+    height: 110px;
+  }
+}
+
+@media(max-width:860px){
+.job{
+  margin-bottom: 30px;
+}
+}
+
+@media(max-width:950px){
+
+  .home-page {
+    height: 1850px;
+  }
+
+  .projects {
+      height: auto;
+      padding-bottom: 30px;
+      width: 90%;
+  }
+
+  .project-text {
+      font-size: 32px;
+      letter-spacing: 5px;
+      padding-top: 10px;
+      height: 50px;
+      margin-bottom: 30px;
+  }
+
+  .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      width: 100%;
+      padding: 10px;
+  }
+
+  .project {
+      width: 100%;
+      max-width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+  }
+
+  .project-image {
+      width: 60px;
+      height: 60px;
+  }
+
+  .project-name {
+      margin-top: 20px;
+      font-size: 18px;
+  }
+
+  .project-info {
+      font-size: 13px;
+      margin: 12px;
+      height: 70px;
+      width: 80%;
+  }
+
+  .link-to-project {
+      font-size: 14px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+  }
+
+  .arrow {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 10px solid rgb(16, 87, 120);
+  }
+}
+
+@media(max-width:1200px){
+.job-details-container {
+  width: 90%
+}
+
+.job {
+  font-size: 26px;
+  height: 70px;
+}
+}
+
+@media(max-width:1000px){
+.job {
+  font-size: 24px;
+  height: 70px;
+}
+}
+
+@media(max-width:900px){
+.job {
+  font-size: 24px;
+  height: 70px;
+}}
+
+/* Mobile responsiveness for screens smaller than 800px */
+@media (max-width: 800px) {
+  .home-page {
+      height: auto; 
+  }
+
+  .background1-image {
+      height: 1000px;
+  }
+
+  .background1-image-box {
+      height: 450px;
+      padding-left: 5%;
+  }
+
+  .welcome-coded-text {
+      font-size: 23px;
+  }
+
+  .hello-message {
+      font-size: 45px;
+  }
+
+  .job-details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: auto; /* remove fixed height */
+    width: 75%;
+  }
+
+  .job-entries {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+.job-details {
+    height: 330px;
+    width: 100%;
+    max-width: 350px; /* keeps them from stretching too wide */
+    text-align: center; /* center the text */
+  }
+
+  .job-image {
+    max-width: 250px;
+    margin-bottom: 0px; 
+  }
+
+  .job {
+    font-size: 25px;
+    height: auto; /* Let height adjust naturally */
+    margin-bottom: 4px; /* Smaller gap */
+  }
+
+  .job-description {
+    font-size: 16px;
+    line-height: 1.3;
+    margin-top: 4px;
+  }
+
+  .job, .job-description{
+    transform: translateY(-35px);
+  }
+
+  .job-button {
+    margin-top: 30px;
+    padding: 12px 18px;
+    font-size: 14px;
+  }
+
+  .project-info{
+    height: 90px;
+  }
+}
+
+@media (max-width: 600px){
+  .project-name{
+    height: 50px;
+  }
+
+  .project-info{
+    height: 125px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .background1-image {
+      height: 450px;
+  }
+
+  .background1-image-box {
+      height: 350px;
+  }
+
+  .text-overlay {
+      transform: translateY(40px);
+  }
+
+  .welcome-coded-text {
+      font-size: 20px;
+  }
+
+  .hello-message {
+      font-size: 38px;
+  }
+
+  .job-details-container {
+    width: 80%; 
+  }
+
+  .job-details{
+    margin: 0;
+  }
+
+  .job-entries {
+      grid-template-columns: 1fr;
+  }
+
+  .job-description{
+    font-size: 16px;
+  }
+
+  .projects{
+    margin-top: 60px;
+  }
+
+  /* Project grid becomes single-column */
+  .projects-grid {
+      margin-top: 40px;
+      grid-template-columns: 1fr;
+  }
+
+  .project-text {
+      font-size: 28px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+  }
+
+  .job-image {
+    max-width: 250px;
+    margin-bottom: 0px; 
+  }
+
+  .project {
+      align-items: center;
+      text-align: center;
+  }
+
+  .project-info {
+    font-size: 14px;
+    height: 60px;
+  }
+
+  .link-to-project {
+      justify-content: center;
+  }
+}

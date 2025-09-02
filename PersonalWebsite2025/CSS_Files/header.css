@@ -1,0 +1,140 @@
+/* Reset all elements default padding and margins*/
+*{
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    position: fixed; /* Keep header at top, even when scrolling down*/
+    top: 0;
+    width: 100%; /* Full width of screen*/
+    background-color: rgba(1, 6, 12, 1);
+    z-index: 1000; /* Keep above all other content */
+}
+
+/* Remove default bullet points for list items*/
+.nav-item{
+    list-style: none;
+}
+
+/* Anchor (link) Styling */
+a{
+    color: rgb(229, 229, 229);
+    text-decoration: none; /* No underline */
+}
+
+.logo {
+    width: 100px;
+    height: auto; /* maintains aspect ratio */
+    align-items: center;
+}
+
+.nav-bar {
+    min-height: 70px;
+    display: flex; /* Flex layout for horizontal alignment */
+    justify-content: space-between; /* Space between logo and nav menu*/
+    align-items: center; /* Vertically center items */
+    padding-left: 24px;
+    padding-right: 40px;
+}
+
+.nav-menu{
+    display: flex; /* Flex layout for horizontal alignment */
+    justify-content: space-between; /* Space between logo and nav menu*/
+    align-items: end; /* Align items to bottom of container */
+    gap: 60px; /* Space between nav items */
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding-top: 30px;
+}
+
+.logo:hover{
+    color:rgba(1, 6, 12, 1);
+    cursor: default;
+}
+
+/* Hover effect for nav menu */
+.nav-menu:hover {
+    cursor: pointer;
+}
+
+/* Transition for nav links */
+.nav-link{
+    font-family: 'Poppins', sans-serif;
+    color: rgb(189, 189, 189); 
+    transition: 0.3s ease;
+}
+
+/* Hover effect for individual nav links */
+.nav-link:hover{
+    color: rgb(116, 116, 116);
+}
+
+/* Hamburger icon (for mobile) */
+.hamburger{
+    display: none; /* Hidden by default (desktop only) */
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+/* Hamburger bars */
+.bar{
+    display: block; /* Block element - take up full width available, starts on new line*/
+    width: 25px; 
+    height: 3px; 
+    margin: 5px auto; /* Space between bars */
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(217, 216, 216); 
+}
+
+/* Mobile responsiveness for screens smaller than 800px */
+@media(max-width:800px){
+    /* Show hamburger icon */
+    .hamburger{
+        display: block;
+    }
+
+    /* Middle bar disappears when hamburger is active (animation effect) */
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    /* First bar becomes diagonal when active */
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    /* Third bar becomes diagonal in opposite direction */
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Style nav menu as a dropdown for mobile */
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(5, 5, 5, 0.95);
+        width: 170px;
+        text-align: center;
+        align-items: center; 
+        transition: 0.3s;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(15, 15, 15);
+    }
+
+    /* Margin between menu items */
+    .nav-item {
+        margin: 14px 0;
+    }
+
+    /* Slide-in when active */
+    .nav-menu.active{
+        right: 0;
+    }
+}
